@@ -5,6 +5,9 @@ import { Routes, Route } from 'react-router-dom';
 import esES from 'antd/locale/es_ES';
 import Layout from './components/Layout';
 
+import DevicesPage from './pages/DevicesPage.tsx';
+import TestPage from './pages/TestPage.tsx';
+
 import './App.css';
 
 // Páginas de ejemplo
@@ -14,22 +17,10 @@ const HomePage: React.FC = () => (
     <p>Bienvenido a la aplicación</p>
   </div>
 );
-const DashboardPage: React.FC = () => (
-  <div>
-    <h2>Dashboard</h2>
-    <p>Visualiza tus estadísticas</p>
-  </div>
-);
 const ProjectsPage: React.FC = () => (
   <div>
     <h2>Proyectos</h2>
     <p>Gestiona tus proyectos</p>
-  </div>
-);
-const AllProjectsPage: React.FC = () => (
-  <div>
-    <h2>Todos los Proyectos</h2>
-    <p>Lista completa</p>
   </div>
 );
 const MyProjectsPage: React.FC = () => (
@@ -99,11 +90,11 @@ const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/dashboard' element={<DashboardPage />} />
-          <Route path='/projects' element={<ProjectsPage />} />
-          <Route path='/projects/all' element={<AllProjectsPage />} />
-          <Route path='/projects/mine' element={<MyProjectsPage />} />
-          <Route path='/projects/shared' element={<SharedProjectsPage />} />
+          <Route path='/devices' element={<DevicesPage />} />
+          <Route path='/signals' element={<ProjectsPage />} />
+          <Route path='/signals/test' element={<TestPage />} />
+          <Route path='/signals/mine' element={<MyProjectsPage />} />
+          <Route path='/signals/shared' element={<SharedProjectsPage />} />
           <Route path='/documents' element={<DocumentsPage />} />
           <Route path='/reports' element={<ReportsPage />} />
           <Route path='/reports/sales' element={<SalesReportsPage />} />

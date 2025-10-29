@@ -20,11 +20,11 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   // Mapeo de rutas a keys del menú
   const routeToKeyMap: Record<string, MenuKey> = {
     '/': 'home',
-    '/dashboard': 'dashboard',
-    '/projects': 'projects',
-    '/projects/all': 'projects:all',
-    '/projects/mine': 'projects:mine',
-    '/projects/shared': 'projects:shared',
+    '/devices': 'devices',
+    '/signals': 'signals',
+    '/signals/test': 'signals:test',
+    '/signals/mine': 'signals:mine',
+    '/signals/shared': 'signals:shared',
     '/documents': 'documents',
     '/reports': 'reports',
     '/reports/sales': 'reports:sales',
@@ -38,11 +38,11 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   // Mapeo de keys del menú a rutas
   const keyToRouteMap: Record<MenuKey, string> = {
     home: '/',
-    dashboard: '/dashboard',
-    projects: '/projects',
-    'projects:all': '/projects/all',
-    'projects:mine': '/projects/mine',
-    'projects:shared': '/projects/shared',
+    devices: '/devices',
+    signals: '/signals',
+    'signals:test': '/signals/test',
+    'signals:mine': '/signals/mine',
+    'signals:shared': '/signals/shared',
     documents: '/documents',
     reports: '/reports',
     'reports:sales': '/reports/sales',
@@ -64,11 +64,11 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
     const currentKey = routeToKeyMap[location.pathname] || 'home';
     const titles: Record<MenuKey, string> = {
       home: 'Inicio',
-      dashboard: 'Dashboard',
-      projects: 'Proyectos',
-      'projects:all': 'Todos los Proyectos',
-      'projects:mine': 'Mis Proyectos',
-      'projects:shared': 'Proyectos Compartidos',
+      devices: 'Dispositivos',
+      signals: 'Señales',
+      'signals:test': 'Test',
+      'signals:mine': 'Mis Señales',
+      'signals:shared': 'Señales Compartidos',
       documents: 'Documentos',
       reports: 'Reportes',
       'reports:sales': 'Reportes de Ventas',
@@ -127,7 +127,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       </Sider>
 
       <Layout
-        style={{ marginLeft: collapsed ? 80 : 200, transition: 'all 0.2s' }}
+        style={{ marginLeft: collapsed ? 80 : 200, transition: 'test 0.2s' }}
       >
         <Header
           style={{

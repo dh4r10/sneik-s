@@ -4,11 +4,11 @@ export type MenuItem = Required<MenuProps>['items'][number];
 
 export type MenuKey =
   | 'home'
-  | 'dashboard'
-  | 'projects'
-  | 'projects:all'
-  | 'projects:mine'
-  | 'projects:shared'
+  | 'devices'
+  | 'signals'
+  | 'signals:test'
+  | 'signals:mine'
+  | 'signals:shared'
   | 'documents'
   | 'reports'
   | 'reports:sales'

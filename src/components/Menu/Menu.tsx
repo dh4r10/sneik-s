@@ -3,14 +3,16 @@ import { Menu } from 'antd';
 import type { MenuProps } from 'antd';
 import {
   HomeOutlined,
-  AppstoreOutlined,
   SettingOutlined,
   UserOutlined,
   FileTextOutlined,
   BarChartOutlined,
   TeamOutlined,
-  FolderOutlined,
 } from '@ant-design/icons';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptop, faWaveSquare } from '@fortawesome/free-solid-svg-icons';
+
 import { AppMenuProps, MenuItem, MenuKey } from './menu.types.ts';
 
 const AppMenu: React.FC<AppMenuProps> = ({ onMenuSelect }) => {
@@ -23,26 +25,26 @@ const AppMenu: React.FC<AppMenuProps> = ({ onMenuSelect }) => {
       icon: <HomeOutlined />,
     },
     {
-      label: 'Dashboard',
-      key: 'dashboard',
-      icon: <AppstoreOutlined />,
+      label: 'Dispositivos',
+      key: 'devices',
+      icon: <FontAwesomeIcon icon={faLaptop} style={{ fontSize: '11px' }} />,
     },
     {
-      label: 'Proyectos',
-      key: 'projects',
-      icon: <FolderOutlined />,
+      label: 'Señales',
+      key: 'signals',
+      icon: <FontAwesomeIcon icon={faWaveSquare} />,
       children: [
         {
-          label: 'Todos los Proyectos',
-          key: 'projects:all',
+          label: 'Test',
+          key: 'signals:test',
         },
         {
-          label: 'Mis Proyectos',
-          key: 'projects:mine',
+          label: 'Mis Señales',
+          key: 'signals:mine',
         },
         {
           label: 'Compartidos',
-          key: 'projects:shared',
+          key: 'signals:shared',
         },
       ],
     },
